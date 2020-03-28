@@ -68,46 +68,11 @@ const Home = () => {
             <div className="support">
                 <h2>Need Support?</h2>
                 <p>
-                    We created this collaborative, open-source doc for our community to 
-                    share ways we are staying creative, motivated or productive with the extra time we have. 
-                    It's a great reminder that community is not just a group of people, 
-                    it's the sharing of ideas, experiences, and knowledge. 
-                    Feel free to check back regularly for new updates from the community 
-                    so we can still be together while apart!
+                    Reach out to info@builtbygirls.com and we're happy to help!
                 </p>
             </div>
         </div>
     );
 };
 
-/*
-            <div className="buttons">
-                <table>
-                    <tr>
-                        <td>
-                            <button class="button">💜 To Get Support 💜</button>
-                        </td>
-                        <td>
-                            <button class="button">💻 To Hustle 💻</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <button class="button">📖 To Relax 📖</button>
-                        </td>
-                        <td>
-                            <button class="button">🎟️ To Attend 🎟️</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <button class="button">💫 To Host 💫</button>
-                        </td>
-                        <td>
-                            <button class="button">Submit A Resource</button>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-*/
 export default Home;

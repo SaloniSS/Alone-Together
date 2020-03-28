@@ -1,4 +1,4 @@
-div, table{
+div{
     box-sizing: border-box;
     width: 100%;
 }
@@ -8,13 +8,9 @@ div, table{
     height: fit-content;
     text-align: center;
     background: #C8FFC3;
-    padding-left: 1rem;
 }
 
-h2{
-    text-align: left;
-}
-
-p {
-    text-align: center;
+table{
+    box-sizing: border-box;
+    width: 100%;
 }

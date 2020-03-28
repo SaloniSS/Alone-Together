@@ -2,13 +2,13 @@ import React from 'react';
 import { BrowserRouter as Router , Route , Redirect , Switch} from 'react-router-dom';
 
 import Home from './Home/Home'
-import GetSupport from './Resources/Pages/GetSupport/GetSupport'
-import Hustle from './Resources/Pages/Hustle/Hustle'
-import Relax from './Resources/Pages/Relax/Relax'
-import Attend from './Resources/Pages/Attend/Attend'
-import Host from './Resources/Pages/Host/Host'
+import GetSupport from './ResourcePages/GetSupport'
+import Hustle from './ResourcePages/Hustle'
+import Relax from './ResourcePages/Relax'
+import Attend from './ResourcePages/Attend'
+import Host from './ResourcePages/Host'
 import AddResource from './AddResource/AddResource';
-import Footer from './Footer';
+import Footer from './Footer/Footer';
 import './App.css';
 
 function App() {

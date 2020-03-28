@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router , Route , Redirect , Switch} from 'react-router-dom';
 
-import logo from './logo.svg';
 import Home from './Home/Home'
 import GetSupport from './Resources/Pages/GetSupport/GetSupport'
 import Hustle from './Resources/Pages/Hustle/Hustle'
@@ -9,6 +8,7 @@ import Relax from './Resources/Pages/Relax/Relax'
 import Attend from './Resources/Pages/Attend/Attend'
 import Host from './Resources/Pages/Host/Host'
 import AddResource from './AddResource/AddResource';
+import Footer from './Footer';
 import './App.css';
 
 function App() {
@@ -40,6 +40,7 @@ function App() {
           <Redirect to="/"/>
         </Switch>
       </main>
+      <Footer />
     </Router>
   );
 }

@@ -1,0 +1,24 @@
+div{
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.header{
+    display: inline-block;
+    height: fit-content;
+    text-align: center;
+    background: #9DE996;
+    color: black;
+}
+
+.footer {
+    display: inline-block;
+    height: fit-content;
+    text-align: center;
+    background: #C8FFC3;
+}
+
+table{
+    box-sizing: border-box;
+    width: 100%;
+}

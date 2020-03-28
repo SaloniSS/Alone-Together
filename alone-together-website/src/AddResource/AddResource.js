@@ -2,6 +2,12 @@ import React, { useState }  from 'react';
 import { Link } from 'react-router-dom';
 
 import './AddResource.css'
+import firebaseConfig from '../env';
+
+const firebase = require("firebase");
+require("firebase/firestore");
+firebase.initializeApp(firebaseConfig);
+var db = firebase.firestore();
 
 const AddResource = (props) => {
     
@@ -25,14 +31,29 @@ const AddResource = (props) => {
             submittedBy: enteredSubmittedBy
         };
 
+        console.log(newResource);
+
+        db.collection(newResource.category).add({
+                name: newResource.name,
+                medium: newResource.medium,
+                link: newResource.link,
+                description: newResource.description,
+                submittedBy: newResource.submittedBy
+            })
+            .then(function(docRef) {
+                console.log("Document written with ID: ", docRef.id);
+            })
+            .catch(function(error) {
+                console.error("Error adding document: ", error);
+        });
+
         setEnteredCategory('');
         setEnteredName('');
         setEnteredMedium('');
         setEnteredLink('');
         setEnteredDescription('');
         setEnteredSubmittedBy('');
-        console.log(newResource);
-        //Add to DataBase here
+        
     };
 
     const categoryChangeHandler = event => {
@@ -103,9 +124,7 @@ const AddResource = (props) => {
                     <Link to ='/' >
                         <button className="resource-button">Cancel</button>
                     </Link>
-                    <Link to ='/' >
                     <button className="resource-button" type="submit">Add Goal</button>
-                </Link>
                 </form>
             </div>
         </div>

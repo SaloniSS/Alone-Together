@@ -6,7 +6,9 @@ import './Footer.css';
 const Footer = () => {
     return(
         <div className="footer">
-            <h2 >Quick Links</h2>
+            <div className="header">
+                <h2 >Quick Links</h2>
+            </div>
             <table>
                 <tr>
                     <th> <Link to ='/' > <p>🌟 Together Alone : Home Page🌟</p> </Link> </th>
@@ -26,7 +28,9 @@ const Footer = () => {
                     
                 </tr>
             </table>
-            <p>Made with 💖 by <a href="https://www.saloni-shivdasani.codes" target="_blank">Saloni Shivdasani</a> </p>
+            <div className="header">
+                <p>Made with 💖 by <a href="https://www.saloni-shivdasani.codes" target="_blank">Saloni Shivdasani</a> </p>
+            </div>
         </div>
     );
 };

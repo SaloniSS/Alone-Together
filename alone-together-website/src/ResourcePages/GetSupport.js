@@ -5,6 +5,15 @@ import { Link } from 'react-router-dom';
 import './ResourcePages.css';
 
 const GetSupport = () => {
+
+    //Get Resources Here
+
+    /*
+        props.goals.map( (goal) => {
+            return <li key={goal.id}>{goal.text}</li>;
+        })
+    */
+
     return(
         <div>
             <div className="header">
@@ -23,13 +32,14 @@ const GetSupport = () => {
                         <Card className="portfolio-card">
                             <CardBody>
                                 <CardTitle>Title</CardTitle>
-                                <CardText>Description</CardText>
+                                <CardText><strong>Medium: </strong></CardText>
+                                <CardText><strong>Description: </strong></CardText>
+                                <CardText><strong>Submitted By: </strong></CardText>
                             </CardBody>
                         </Card>
                     </Link>
                 </Col>
             </div>
-
         </div>       
     );
 };

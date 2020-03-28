@@ -47,7 +47,6 @@ div{
 .button {
     display: inline-block;
     width: 50%;
-    border: none;
     background-color: #C8FFC3;
     cursor: pointer;
     text-align: center;

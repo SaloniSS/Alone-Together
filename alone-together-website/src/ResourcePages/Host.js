@@ -22,9 +22,11 @@ const Host = () => {
                 <Col className="card-padding">
                     <Link to ='/' >
                         <Card className="portfolio-card">
-                            <CardBody>
+                        <CardBody>
                                 <CardTitle>Title</CardTitle>
-                                <CardText>Description</CardText>
+                                <CardText><strong>Medium: </strong></CardText>
+                                <CardText><strong>Description: </strong></CardText>
+                                <CardText><strong>Submitted By: </strong></CardText>
                             </CardBody>
                         </Card>
                     </Link>

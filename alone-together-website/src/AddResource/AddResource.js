@@ -2,12 +2,7 @@ import React, { useState }  from 'react';
 import { Link } from 'react-router-dom';
 
 import './AddResource.css'
-import firebaseConfig from '../env';
-
-const firebase = require("firebase");
-require("firebase/firestore");
-firebase.initializeApp(firebaseConfig);
-var db = firebase.firestore();
+import db from '../firebase';
 
 const AddResource = (props) => {
     

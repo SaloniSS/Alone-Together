@@ -26,20 +26,19 @@ div{
 
 .resource {
     display: inline-block;
-
 }
 
 .portfolio-card {
     display: inline-block;
-    min-width: 65%;
-    max-width: fit-content;
     height: fit-content;
-
     border: 10px solid #9DE996;
+    min-width:fit-content;
+    width: 25%;
+    margin: 15px 15px 15px 15px;;
 }
 
 .card-padding {
-    padding: 15px 15px 15px 25%;
+    padding: 15px 15px 15px 15px;
     align-items: center;
 }
 

@@ -3,40 +3,57 @@ import { Container, Row, Col, Card, CardBody, CardTitle, CardText} from 'reactst
 import { Link } from 'react-router-dom';
 
 import './ResourcePages.css';
+import db from '../firebase';
 
-const Attend = () => {
-    return(
-        <div>
-            <div className="header">
-                <h1>🎟️ Attend 🎟️</h1>
-                <h2>Getting to Werk</h2>
-            </div>
-            <div className="header-description">
-                <p>
-                    We know you've been keeping busy! 
-                    Share with us the side projects or business ideas that you're working on. 
-                    Tell us if you just want some love or if you have a request for virtual help in any way. 
-                    Don't have a project? Browse the incredible things your community members are building! 
-                    Or drop links to free resources to staying productive.
-                </p>
-            </div>
-            <div className="resource">
-                <Col className="card-padding">
-                    <Link to ='/' >
-                        <Card className="portfolio-card">
-                        <CardBody>
-                                <CardTitle>Title</CardTitle>
-                                <CardText><strong>Medium: </strong></CardText>
-                                <CardText><strong>Description: </strong></CardText>
-                                <CardText><strong>Submitted By: </strong></CardText>
-                            </CardBody>
-                        </Card>
-                    </Link>
-                </Col>
-            </div>
+class Attend extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        resources: []
+      };
+    }
+  
+    componentDidMount() {
+        db.collection("To Attend").get().then(querySnapshot => {
+          const data = querySnapshot.docs.map(doc => doc.data());
+          console.log(data);
+          this.setState({ resources: data });
+        });
+    }
 
-        </div>       
-    );
-};
+    render() {
+        const { resources } = this.state;
+        return(
+            <div>
+                <div className="header">
+                    <h1>🎟️ Attend 🎟️</h1>
+                    <h2>Let's Meet up virtually!</h2>
+                </div>
+                <div className="header-description">
+                    <p>
+                        Share free virtual events that other individuals, brands or organizations are hosting. 
+                        We'll see you there!  
+                    </p>
+                </div>
+                <div className="resource">
+                    <Col className="card-padding">
+                        {resources.map (resource => (
+                            <a href={resource.link} target="_blank">
+                                <Card className="portfolio-card">
+                                    <CardBody>
+                                        <CardTitle>{resource.name}</CardTitle>
+                                        <CardText><strong>Medium: </strong> {resource.medium} </CardText>
+                                        <CardText><strong>Description: </strong> {resource.description} </CardText>
+                                        <CardText><strong>Submitted By: </strong> {resource.submittedBy} </CardText>
+                                    </CardBody>
+                                </Card>
+                            </a>
+                        ))}
+                    </Col>
+                </div>
+            </div>       
+        );
+    }
+}
 
 export default Attend;

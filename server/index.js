@@ -7,9 +7,11 @@ const morgan = require('morgan');
 
 dotenv.config({ path:'./config/config.env' });
 
+const resources = require('./routes/resources');
+
 const app = express();
 
-app.use((req, res) => res.send('Hello World'));
+app.use('/api/v1/resources', resources);
 
 const PORT = process.env.PORT || 5000;
 

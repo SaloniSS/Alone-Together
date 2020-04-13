@@ -4,6 +4,8 @@ import { Container, Row, Col, Card, CardBody, CardTitle, CardText} from 'reactst
 import './ResourcePages.css';
 import db from '../firebase';
 
+const axios = require('axios').default;
+
 class GetSupport extends React.Component {
     constructor(props) {
       super(props);
@@ -13,11 +15,26 @@ class GetSupport extends React.Component {
     }
   
     componentDidMount() {
-        db.collection("To Get Support").get().then(querySnapshot => {
-          const data = querySnapshot.docs.map(doc => doc.data());
-          console.log(data);
-          this.setState({ resources: data });
-        });
+        axios.get('https://rowdyhacks-2020.appspot.com/api/v1/resources')
+          .then(function (response) {
+            let resourceData = [];
+            let resourceArray = response.data.data;
+            resourceArray.forEach(element => {
+                let elementCategory = element.category;
+                console.log(elementCategory);
+                if ((elementCategory) === ("To Get Support")){
+                    console.log(element);
+                    resourceData.push(element);
+                }
+            });
+            this.setState({ resources :  resourceData});
+          }.bind(this))
+          .catch(function (error) {
+            console.log(error);
+          })
+          .then(function () {            
+          }
+        );  
     }
 
     render() {
@@ -37,13 +54,12 @@ class GetSupport extends React.Component {
                 <div className="resource">
                     <Col className="card-padding">
                         {resources.map (resource => (
-                            <a href={resource.link} target="_blank">
+                            <a href={resource.url} target="_blank">
                                 <Card className="portfolio-card">
                                     <CardBody>
-                                        <CardTitle>{resource.name}</CardTitle>
+                                        <CardTitle>{resource.title}</CardTitle>
                                         <CardText><strong>Medium: </strong> {resource.medium} </CardText>
                                         <CardText><strong>Description: </strong> {resource.description} </CardText>
-                                        <CardText><strong>Submitted By: </strong> {resource.submittedBy} </CardText>
                                     </CardBody>
                                 </Card>
                             </a>

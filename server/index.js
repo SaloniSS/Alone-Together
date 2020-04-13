@@ -14,6 +14,8 @@ const resources = require('./routes/resources');
 
 const app = express();
 
+app.use(express.json());
+
 app.use('/api/v1/resources', resources);
 
 const PORT = process.env.PORT || 5000;

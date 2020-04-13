@@ -23,5 +23,30 @@ exports.getResources = async (req, res, next) => {
 //@route    POST /api/v1/resources
 //@access   Public
 exports.addResources = async (req, res, next) => {
-    res.send('POST resources');
+    try {
+        const { url, title, description, category, medium} = req.body;
+
+        const resource = await Resource.create(req.body);
+
+        return res.send(201).json({
+            success: true,
+            data: resource
+        });
+    } catch (error) {
+        if(error.name === 'ValidationError') {
+            const messages = Object.values(error.errors).map(val => val.message);
+        
+            return res.status(400).json({
+                success: false,
+                error: messages
+            });
+        }
+
+        else {
+            return res.status(500).json({
+                success: false,
+                error: 'Server Error'
+            });
+        }
+    }
 }

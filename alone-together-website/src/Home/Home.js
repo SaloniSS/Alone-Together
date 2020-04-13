@@ -13,7 +13,7 @@ const Home = () => {
             <div className="about">
                 <h2>About</h2>
                 <p>
-                    We created this collaborative, open-source doc for our community to 
+                    This is a collaborative, open-source resource for the community to 
                     share ways we are staying creative, motivated or productive with the extra time we have. 
                     It's a great reminder that community is not just a group of people, 
                     it's the sharing of ideas, experiences, and knowledge. 
@@ -49,7 +49,7 @@ const Home = () => {
                         Each category has a brief description so you can see what it's about.
                     </li>
                     <li>
-                        Add anything you believe is relevant for HS + College young women and non-binary students.
+                        Add anything you believe is relevant for the community.
                         Consider hosting a virtual meetup!
                     </li>
                     <li>
@@ -58,17 +58,21 @@ const Home = () => {
                     </li>
                     <li>
                         With great power comes great responsibilities.
-                        Please keep this public doc safe, inclusive, and welcoming for everyone.
+                        Please keep this public resource safe, inclusive, and welcoming for everyone.
                     </li>	
                     <li>
-                        Feel free to share this doc with your friends, classmates, or anyone that need this.
+                        Feel free to share this resource with your friends, classmates, or anyone that need this.
                     </li>	
                 </ol>	
             </div>
             <div className="support">
                 <h2>Need Support?</h2>
                 <p>
-                    Reach out to info@builtbygirls.com and we're happy to help!
+                    Reach out to <a 
+                        href="mailto:salonishivdasani@gmail.com?Subject=Alone%20Together%20Inquiry" 
+                        target="_top">
+                            salonishivdasani@gmail.com
+                    </a> and I'd be happy to help!
                 </p>
             </div>
         </div>

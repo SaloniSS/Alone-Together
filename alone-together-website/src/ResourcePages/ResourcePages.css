@@ -32,7 +32,8 @@ div{
     display: inline-block;
     height: fit-content;
     border: 10px solid #9DE996;
-    width: 45%;
+    min-width:fit-content;
+    width: 25%;
     margin: 15px 15px 15px 15px;;
 }
 

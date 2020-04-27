@@ -27,6 +27,11 @@ const ResourceSchema = new mongoose.Schema({
         required: [true, 'Please choose a medium']
     },
 
+    submittedBy: {
+        type: String,
+        default: "Anonymous"
+    },
+
     dateAdded: {
         type: Date,
         default: Date.now

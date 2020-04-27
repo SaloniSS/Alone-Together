@@ -17,9 +17,26 @@ exports.getResource = async (req, res, next) => {
     }
 }
 
+exports.getResourceByCategory = async (req, res, next) => {
+    
+    try {
+        const resource = await Resource.find({}).where({ "category": req.params.id});
+
+        return res.status(200).json({
+            success: true,
+            data: resource
+        });
+    } catch (error) {
+        return res.status(500).json({
+            success: false,
+            error: 'Server Error'
+        });
+    }
+}
+
 exports.addResource = async (req, res, next) => {
     try {
-        const { url, title, description, category, medium} = req.body;
+        const { url, title, description, category, medium, submittedBy} = req.body;
 
         const resource = await Resource.create(req.body);
 

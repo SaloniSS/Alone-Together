@@ -2,7 +2,6 @@ import React, { useState }  from 'react';
 import { Link } from 'react-router-dom';
 
 import './AddResource.css'
-import db from '../firebase';
 
 const axios = require("axios").default;
 
@@ -29,20 +28,6 @@ const AddResource = (props) => {
         };
 
         console.log(newResource);
-
-        // db.collection(newResource.category).add({
-        //         name: newResource.name,
-        //         medium: newResource.medium,
-        //         link: newResource.link,
-        //         description: newResource.description,
-        //         submittedBy: newResource.submittedBy
-        //     })
-        //     .then(function(docRef) {
-        //         console.log("Document written with ID: ", docRef.id);
-        //     })
-        //     .catch(function(error) {
-        //         console.error("Error adding document: ", error);
-        // });
 
         axios.post('http://localhost:8000/api/v1/resources', {
             category: newResource.category,

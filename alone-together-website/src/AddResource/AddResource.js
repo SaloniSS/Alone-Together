@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import './AddResource.css'
 import db from '../firebase';
 
+const axios = require("axios").default;
+
 const AddResource = (props) => {
     
     const [enteredCategory, setEnteredCategory] = useState('');
@@ -28,18 +30,32 @@ const AddResource = (props) => {
 
         console.log(newResource);
 
-        db.collection(newResource.category).add({
-                name: newResource.name,
-                medium: newResource.medium,
-                link: newResource.link,
-                description: newResource.description,
-                submittedBy: newResource.submittedBy
-            })
-            .then(function(docRef) {
-                console.log("Document written with ID: ", docRef.id);
-            })
-            .catch(function(error) {
-                console.error("Error adding document: ", error);
+        // db.collection(newResource.category).add({
+        //         name: newResource.name,
+        //         medium: newResource.medium,
+        //         link: newResource.link,
+        //         description: newResource.description,
+        //         submittedBy: newResource.submittedBy
+        //     })
+        //     .then(function(docRef) {
+        //         console.log("Document written with ID: ", docRef.id);
+        //     })
+        //     .catch(function(error) {
+        //         console.error("Error adding document: ", error);
+        // });
+
+        axios.post('http://localhost:8000/api/v1/resources', {
+            category: newResource.category,
+            title: newResource.name,
+            medium: newResource.medium,
+            url: newResource.link,
+            description: newResource.description
+        })
+        .then(function (response) {
+            console.log(response);
+        })
+        .catch(function (error) {
+            console.log(error);
         });
 
         setEnteredCategory('');
@@ -85,11 +101,11 @@ const AddResource = (props) => {
                     <label> Category:
                         <select value={enteredCategory} onChange={categoryChangeHandler} required>
                             <option value="">Select A Category</option>
-                            <option value="To Get Support">To Get Support</option>
-                            <option value="To Hustle">To Hustle</option>
-                            <option value="To Relax">To Relax</option>
-                            <option value="To Attend">To Attend</option>
-                            <option value="To Host">To Host</option>
+                            <option value="ToGetSupport">To Get Support</option>
+                            <option value="ToHustle">To Hustle</option>
+                            <option value="ToRelax">To Relax</option>
+                            <option value="ToAttend">To Attend</option>
+                            <option value="ToHost">To Host</option>
                         </select>
                     </label> <br />
                     <label> Name of Resource:
@@ -114,7 +130,7 @@ const AddResource = (props) => {
                         <input type="text" value={enteredDescription} onChange={descriptionChangeHandler} placeholder="Description" required/>
                     </label> <br />
                     <label> Submitted By: 
-                        <input type="text" value={enteredSubmittedBy} onChange={submittedChangeHandler} placeholder="Submitted By" required/>
+                        <input type="text" value={enteredSubmittedBy} onChange={submittedChangeHandler} placeholder="Submitted By"/>
                     </label> <br />
                     <Link to ='/' >
                         <button className="resource-button">Cancel</button>

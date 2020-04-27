@@ -29,7 +29,16 @@ const Footer = () => {
                 </tr>
             </table>
             <div className="header">
-                <p>Made with 💖 by <a href="https://www.saloni-shivdasani.codes" target="_blank">Saloni Shivdasani</a> </p>
+                <p>
+                    Made with 💖 by <a href="https://www.saloni-shivdasani.codes" target="_blank">
+                        Saloni Shivdasani
+                    </a>
+                </p>
+                <p>
+                    with Inspiration and Resource Guide from <a href="https://www.builtbygirls.com/" target="_blank">
+                        Built By Girls
+                    </a>
+                </p>
             </div>
         </div>
     );

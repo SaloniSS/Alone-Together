@@ -13,8 +13,7 @@ const ResourceSchema = new mongoose.Schema({
     },
 
     description: {
-        type: String,
-        required: [true, 'Please add a description']
+        type: String
     },
 
     category: {

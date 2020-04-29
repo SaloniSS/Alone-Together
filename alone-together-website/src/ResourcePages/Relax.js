@@ -12,7 +12,7 @@ const Relax = () => {
   
     useEffect(() => {
         const fetchData = async () => {
-            const result = await axios(`http://localhost:8000/api/v1/resources/ToRelax`);
+            const result = await axios(`https://project-accessibility.wl.r.appspot.com/api/v1/resources/ToRelax`);
             setResources(result.data.data);
           };
           fetchData();

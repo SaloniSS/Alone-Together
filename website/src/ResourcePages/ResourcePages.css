@@ -29,35 +29,32 @@ div{
 }
 
 .portfolio-card {
-    display: inline-block;
-    height: fit-content;
     border: 10px solid #9DE996;
-    min-width:fit-content;
-    width: 25%;
-    margin: 15px 15px 15px 15px;;
 }
 
 .card-padding {
     padding: 15px 15px 15px 15px;
-    align-items: center;
+}
+
+.row-padding {
+    padding-top: 25px;
+    padding-bottom: 25px;
 }
 
 .card-body {
     background: #C8FFC4;
     text-align: center;
+    padding: 15px 15px 15px 15px;
 }
 
 .card-title {
     color: black;
     font-size: 22px;
     font-weight: bold;
-    margin-left: 1rem;
-    width: fit-content;
     background: #C8FFC4;
 }
 
 .card-text {
     color: black;
     margin-left: 1rem;
-    width: fit-content;
 }

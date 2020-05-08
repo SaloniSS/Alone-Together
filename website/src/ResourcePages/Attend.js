@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import { Container, Row, Col, Card, CardBody, CardTitle, CardText} from 'reactstrap';
-import { Link } from 'react-router-dom';
 
+import Resource from './Resource';
 import './ResourcePages.css';
 
 const axios = require("axios").default;
@@ -31,20 +30,9 @@ const Attend = () => {
                 </p>
             </div>
             <div className="resource">
-                <Col className="card-padding">
-                    {resources.map (resource => (
-                        <a href={resource.url} target="_blank">
-                            <Card className="portfolio-card">
-                                <CardBody>
-                                    <CardTitle>{resource.title}</CardTitle>
-                                    <CardText><strong>Medium: </strong> {resource.medium} </CardText>
-                                    <CardText><strong>Description: </strong> {resource.description} </CardText>
-                                    <CardText><strong>Submitted By: </strong> {resource.submittedBy} </CardText>
-                                </CardBody>
-                            </Card>
-                        </a>
-                    ))}
-                </Col>
+                {resources.map (resource => (
+                    <Resource resource={resource}/>
+                ))}
             </div>
         </div>       
     );

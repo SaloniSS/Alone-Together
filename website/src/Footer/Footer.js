@@ -30,12 +30,12 @@ const Footer = () => {
             </table>
             <div className="header">
                 <p>
-                    Made with 💖 by <a href="https://www.saloni-shivdasani.codes" target="_blank">
+                    Made with 💖 by <a href="https://www.saloni-shivdasani.codes" target="_blank" rel="noopener noreferrer">
                         Saloni Shivdasani
                     </a>
                 </p>
                 <p>
-                    with Inspiration and Resource Guide from <a href="https://www.builtbygirls.com/" target="_blank">
+                    with Inspiration and Resource Guide from <a href="https://www.builtbygirls.com/" target="_blank" rel="noopener noreferrer">
                         Built By Girls
                     </a>
                 </p>

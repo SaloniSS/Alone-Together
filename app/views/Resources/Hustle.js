@@ -8,13 +8,13 @@ import Resource from "../../components/Resource";
 
 const axios = require("axios").default;
 
-const GetSupport = () => {
+const Hustle = () => {
 
   const [resources, setResources] = useState([]);
   
     useEffect(() => {
         const fetchData = async () => {
-            const result = await axios(`https://project-alone-together.wl.r.appspot.com/api/v1/resources/ToGetSupport`);
+            const result = await axios(`https://project-alone-together.wl.r.appspot.com/api/v1/resources/ToHustle`);
             setResources(result.data.data);
           };
           fetchData();
@@ -23,14 +23,15 @@ const GetSupport = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.intro}>
-          <Text style={styles.h1}> 💜 Get Supported 💜 </Text>
-          <Text style={styles.h2}>Online Resources</Text>
+          <Text style={styles.h1}> 💻 To Hustle 💻 </Text>
+          <Text style={styles.h2}>Getting to Werk</Text>
       </View>
 
       <ScrollView>
         <View style={styles.description}>
-            <Text style={styles.p}> Share free resources on how to cope with anxiety and stress from the coronavirus.</Text>
-            <Text style={styles.p}>Articles, guidebooks, or resources that other brands / organizations have created.</Text>
+            <Text style={styles.p}>We know you've been keeping busy! Share with us the side projects or business ideas that you're working on.</Text>
+            <Text style={styles.p}>Tell us if you just want some love or if you have a request for virtual help in any way.</Text>
+            <Text style={styles.p}>Don't have a project? Browse the incredible things your community members are building! Or drop links to free resources to staying productive.</Text>
         </View>
         {resources.map (resource => (
           <Resource resource={resource}/>
@@ -40,7 +41,7 @@ const GetSupport = () => {
   );
 };
 
-export default GetSupport;
+export default Hustle;
 
 const styles = StyleSheet.create({
   container: {

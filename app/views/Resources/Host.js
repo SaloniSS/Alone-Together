@@ -8,13 +8,13 @@ import Resource from "../../components/Resource";
 
 const axios = require("axios").default;
 
-const GetSupport = () => {
+const Host = () => {
 
   const [resources, setResources] = useState([]);
   
     useEffect(() => {
         const fetchData = async () => {
-            const result = await axios(`https://project-alone-together.wl.r.appspot.com/api/v1/resources/ToGetSupport`);
+            const result = await axios(`https://project-alone-together.wl.r.appspot.com/api/v1/resources/ToHost`);
             setResources(result.data.data);
           };
           fetchData();
@@ -23,14 +23,15 @@ const GetSupport = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.intro}>
-          <Text style={styles.h1}> 💜 Get Supported 💜 </Text>
-          <Text style={styles.h2}>Online Resources</Text>
+          <Text style={styles.h1}> 💫 To Host 💫 </Text>
+          <Text style={styles.h2}>Coordinate a Virtual Meet up!</Text>
       </View>
 
       <ScrollView>
         <View style={styles.description}>
-            <Text style={styles.p}> Share free resources on how to cope with anxiety and stress from the coronavirus.</Text>
-            <Text style={styles.p}>Articles, guidebooks, or resources that other brands / organizations have created.</Text>
+            <Text style={styles.p}>Want to host a virtual book club? Study hall? Sharing circle? Watch party? </Text>
+            <Text style={styles.p}>Whatever it is, pitch your idea below and leave your contact info so others can join in.</Text>
+            <Text style={styles.p}>Once it's official, feel free to add to the "To Attend" tab to get some more RSVPS!</Text>
         </View>
         {resources.map (resource => (
           <Resource resource={resource}/>
@@ -40,12 +41,12 @@ const GetSupport = () => {
   );
 };
 
-export default GetSupport;
+export default Host;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#cbeef3'
+    backgroundColor: '#cbeef3',
   },
 
   intro: {

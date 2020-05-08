@@ -8,13 +8,13 @@ import Resource from "../../components/Resource";
 
 const axios = require("axios").default;
 
-const GetSupport = () => {
+const Relax = () => {
 
   const [resources, setResources] = useState([]);
   
     useEffect(() => {
         const fetchData = async () => {
-            const result = await axios(`https://project-alone-together.wl.r.appspot.com/api/v1/resources/ToGetSupport`);
+            const result = await axios(`https://project-alone-together.wl.r.appspot.com/api/v1/resources/ToRelax`);
             setResources(result.data.data);
           };
           fetchData();
@@ -23,14 +23,13 @@ const GetSupport = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.intro}>
-          <Text style={styles.h1}> 💜 Get Supported 💜 </Text>
-          <Text style={styles.h2}>Online Resources</Text>
+          <Text style={styles.h1}> 📖 To Relax 📖 </Text>
+          <Text style={styles.h2}>The Fun Stuff!</Text>
       </View>
 
       <ScrollView>
         <View style={styles.description}>
-            <Text style={styles.p}> Share free resources on how to cope with anxiety and stress from the coronavirus.</Text>
-            <Text style={styles.p}>Articles, guidebooks, or resources that other brands / organizations have created.</Text>
+            <Text style={styles.p}>Share what you've been reading, watching, consuming that you think are *must do* for the community. Sky's the limit!</Text>
         </View>
         {resources.map (resource => (
           <Resource resource={resource}/>
@@ -40,7 +39,7 @@ const GetSupport = () => {
   );
 };
 
-export default GetSupport;
+export default Relax;
 
 const styles = StyleSheet.create({
   container: {

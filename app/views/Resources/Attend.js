@@ -8,13 +8,13 @@ import Resource from "../../components/Resource";
 
 const axios = require("axios").default;
 
-const GetSupport = () => {
+const Attend = () => {
 
   const [resources, setResources] = useState([]);
   
     useEffect(() => {
         const fetchData = async () => {
-            const result = await axios(`https://project-alone-together.wl.r.appspot.com/api/v1/resources/ToGetSupport`);
+            const result = await axios(`https://project-alone-together.wl.r.appspot.com/api/v1/resources/ToAttend`);
             setResources(result.data.data);
           };
           fetchData();
@@ -23,14 +23,14 @@ const GetSupport = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.intro}>
-          <Text style={styles.h1}> 💜 Get Supported 💜 </Text>
-          <Text style={styles.h2}>Online Resources</Text>
+          <Text style={styles.h1}> 🎟️ Attend 🎟️ </Text>
+          <Text style={styles.h2}>Let's Meet up virtually!</Text>
       </View>
 
       <ScrollView>
         <View style={styles.description}>
-            <Text style={styles.p}> Share free resources on how to cope with anxiety and stress from the coronavirus.</Text>
-            <Text style={styles.p}>Articles, guidebooks, or resources that other brands / organizations have created.</Text>
+            <Text style={styles.p}>Share free virtual events that other individuals, brands or organizations are hosting.</Text>
+            <Text style={styles.p}>We'll see you there!</Text>
         </View>
         {resources.map (resource => (
           <Resource resource={resource}/>
@@ -40,7 +40,7 @@ const GetSupport = () => {
   );
 };
 
-export default GetSupport;
+export default Attend;
 
 const styles = StyleSheet.create({
   container: {

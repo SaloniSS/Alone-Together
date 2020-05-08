@@ -12,7 +12,7 @@ const Host = () => {
   
     useEffect(() => {
         const fetchData = async () => {
-            const result = await axios(`https://project-accessibility.wl.r.appspot.com/api/v1/resources/ToHost`);
+            const result = await axios(`https://project-alone-together.wl.r.appspot.com/api/v1/resources/ToHost`);
             setResources(result.data.data);
           };
           fetchData();

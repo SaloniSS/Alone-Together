@@ -12,7 +12,7 @@ const Attend = () => {
   
     useEffect(() => {
         const fetchData = async () => {
-            const result = await axios(`https://project-accessibility.wl.r.appspot.com/api/v1/resources/ToAttend`);
+            const result = await axios(`https://project-alone-together.wl.r.appspot.comm/api/v1/resources/ToAttend`);
             setResources(result.data.data);
           };
           fetchData();

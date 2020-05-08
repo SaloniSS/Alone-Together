@@ -29,7 +29,7 @@ const AddResource = (props) => {
 
         console.log(newResource);
 
-        axios.post('https://project-accessibility.wl.r.appspot.com/api/v1/resources', {
+        axios.post('https://project-alone-together.wl.r.appspot.com/api/v1/resources', {
             category: newResource.category,
             title: newResource.name,
             medium: newResource.medium,

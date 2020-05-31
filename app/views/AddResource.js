@@ -1,5 +1,6 @@
 import React, { useState, useEffect} from 'react';
-import { StyleSheet, Text, View , SafeAreaView, ScrollView} from 'react-native';
+import { StyleSheet, Text, View , SafeAreaView, ScrollView, Button, Form, Item, Input} from 'react-native';
+import { useForm, Controller } from "react-hook-form";
 import {
   responsiveScreenHeight,
   responsiveScreenWidth,
@@ -9,15 +10,21 @@ const axios = require("axios").default;
 
 const AddResource = () => {
 
-  const [resources, setResources] = useState([]);
+  const [category, setCategory] = useState(0);
+  const [enteredText, setEnteredText] = useState("");
+
+  const infoArray = [
+    "Share your me time! Can include gardening, meditation, reading, movie recommendations and much more!",
+    "Record your family/community experience! Can include board games, video calls, family projects, and much more!",
+    "Log your workout routine! Activities include yoga, jogging, dancing, or things that get your heart pumping!",
+    "Update your productivity! Activities include learning a new skill, finishing an assignment, or doing a chore!",
+  ];
   
-    useEffect(() => {
-        const fetchData = async () => {
-            const result = await axios(`https://project-alone-together.wl.r.appspot.com/api/v1/resources/ToRelax`);
-            setResources(result.data.data);
-          };
-          fetchData();
-    });
+  const categoryList = ["md-happy", "md-contacts", "md-bicycle", "md-briefcase"];
+
+  const submitPost = () => {
+    console.log(enteredText);
+  }
 
   return (
     <SafeAreaView style={styles.container}>
@@ -27,7 +34,14 @@ const AddResource = () => {
 
       <ScrollView>
         <View style={styles.description}>
-            <Text>Add Resource</Text>
+          <Form>
+            <Item>
+              <Input placeholder="Username" />
+            </Item>
+          </Form>
+          
+          
+          <Button title="Submit" onPress={() => submitPost()} />
         </View>
       </ScrollView>
     </SafeAreaView>
